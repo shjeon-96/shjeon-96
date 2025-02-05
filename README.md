@@ -34,6 +34,8 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shjeon-96&layout=compact&theme=dark&show_private=true" />
 </p>
 
+<!-- LANGUAGES -->
+
 ---
 
 ### 📫 연락하기
