@@ -22,9 +22,12 @@ jobs:
 
     - name: Fetch languages from private repo
       run: |
-        curl -H "Authorization: token ${{ secrets.YOUR_NEW_GITHUB_TOKEN }}" \
-             https://api.github.com/repos/your-org/your-private-repo/languages \
-             > languages.json
+        repos=("reviewon-front-react" "reviewon-server-nestjs" "bupay-front-react" "sosomarket-webview" "baum-distri-homepage" "sosomarket-front-react" "sosomarket-app" "sosomarket-api")
+        for repo in "${repos[@]}"; do
+          curl -H "Authorization: token ${{ secrets.YOUR_NEW_GITHUB_TOKEN }}" \
+               "https://api.github.com/repos/bubaum/$repo/languages" \
+               > "$repo-languages.json"
+        done
 
     - name: Install jq
       run: sudo apt-get install jq
@@ -32,7 +35,12 @@ jobs:
     - name: Update README with new stats
       run: |
         # 모든 언어 통계 가져오기
-        languages=$(jq -r 'to_entries | map("\(.key): \(.value) lines") | .[]' languages.json)
+        languages=""
+        repos=("reviewon-front-react" "reviewon-server-nestjs" "bupay-front-react" "sosomarket-webview" "baum-distri-homepage" "sosomarket-front-react" "sosomarket-app" "sosomarket-api")
+        for repo in "${repos[@]}"; do
+          repo_languages=$(jq -r 'to_entries | map("\(.key): \(.value) lines") | .[]' "$repo-languages.json")
+          languages+="$repo_languages"$'\n'
+        done
         
         # 디버깅을 위한 출력 확인
         echo "$languages"  # 언어 통계를 출력해봅니다.
