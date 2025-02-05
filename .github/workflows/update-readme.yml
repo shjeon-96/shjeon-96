@@ -32,7 +32,8 @@ jobs:
         uses: yoshi389111/github-profile-3d-contrib@0.6.0
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}  # 비공개 레포 포함
-          USERNAME: shjeon-96
+          USERNAME: ${{ secrets.GH_USERNAME }}
+          ORG_NAME: ${{ secrets.GH_ORG_NAME }}
 
       - name: Commit & Push
         run: |
