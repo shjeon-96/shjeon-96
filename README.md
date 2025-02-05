@@ -12,7 +12,7 @@ I'm a Full-Stack Developer who loves working with **React, Next.js, TypeScript, 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=내_깃허브_ID&layout=compact&theme=dark)  
 
 ### 🏆 Trophies  
-![Trophy](https://github-profile-trophy.vercel.app/?username=내_깃허브_ID&theme=gruvbox)  
+![Trophy](https://github-profile-trophy.vercel.app/?username=shjeon-96&theme=gruvbox)  
 
 ### 📫 How to reach me  
 - **Email**: your.email@example.com  
@@ -20,3 +20,5 @@ I'm a Full-Stack Developer who loves working with **React, Next.js, TypeScript, 
 - **LinkedIn**: [Profile](https://linkedin.com/in/yourname)  
 
 ![Visitor Count](https://komarev.com/ghpvc/?username=shjeon-96&color=blue)  
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=shjeon-96&layout=compact&theme=dark&hide=css,html)
