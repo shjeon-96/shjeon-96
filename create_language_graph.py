@@ -81,7 +81,7 @@ colors = [
 # 원형 그래프 생성
 plt.figure(figsize=(8, 8), dpi=100)
 plt.pie(counts, labels=langs, autopct="%1.1f%%", colors=colors[:len(langs)], 
-        startangle=140, wedgeprops={"edgecolor": "white", "linewidth": 1.5"})
+        startangle=140, wedgeprops={"edgecolor": "white", "linewidth": 1.5})
 
 # 타이틀 설정
 plt.title("Language Usage Statistics", fontsize=14, fontweight="bold", color="#C9D1D9")
