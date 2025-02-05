@@ -42,7 +42,7 @@
 
 <!-- LANGUAGES -->
 <!-- GITHUB_ACTIVITY_GRAPH -->
-
+<!-- LANGUAGE_GRAPH_PIE -->
 ---
 
 ### 📫 연락하기
