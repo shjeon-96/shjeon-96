@@ -1,0 +1,28 @@
+name: Update Language Stats
+
+on:
+  schedule:
+    - cron: "0 * * * *" # 매시간 업데이트
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Generate language stats
+        uses: anuraghazra/github-readme-stats@master
+        with:
+          token: ${{ secrets.GH_STATS_TOKEN }} # GitHub Secret 사용
+          username: shjeon-96
+          show_private: true # Private Repo 포함
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add README.md
+          git commit -m "Update language stats" || exit 0
+          git push
