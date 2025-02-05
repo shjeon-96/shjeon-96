@@ -35,6 +35,9 @@
 </p>
 
 <!-- LANGUAGES -->
+status: 404 lines
+documentation_url: https://docs.github.com/rest/repos/repos#list-repository-languages lines
+message: Not Found lines
 
 ---
 
