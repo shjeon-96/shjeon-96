@@ -1,28 +1,30 @@
-name: Update Language Stats
+name: Update GitHub Stats in README
 
 on:
   schedule:
-    - cron: "0 * * * *" # 매시간 업데이트
+    - cron: "0 0 * * *" # 매일 자정(UTC) 자동 업데이트
   workflow_dispatch:
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Generate language stats
-        uses: anuraghazra/github-readme-stats@master
-        with:
-          token: ${{ secrets.GH_STATS_TOKEN }} # GitHub Secret 사용
-          username: shjeon-96
-          show_private: true # Private Repo 포함
+      - name: Fetch GitHub Stats (Including Private Repos)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
+        run: |
+          curl -H "Authorization: Bearer $GITHUB_TOKEN" -o github-stats.svg \
+            "https://github-readme-stats.vercel.app/api/top-langs/?username=shjeon-96&layout=compact&theme=dark&show_private=true"
+          
+          mv github-stats.svg stats.svg
 
-      - name: Commit and Push
+      - name: Commit and Push Updates
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add README.md
-          git commit -m "Update language stats" || exit 0
+          git add stats.svg
+          git commit -m "Update GitHub Stats" || exit 0
           git push
