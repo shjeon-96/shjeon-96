@@ -1,0 +1,38 @@
+name: Update GitHub Stats
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 매일 자정에 실행 (원하는 시간으로 변경 가능)
+  push:
+    branches:
+      - main
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v3
+
+    - name: Set up Git
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+
+    - name: Fetch languages from private repo
+      run: |
+        curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+             https://api.github.com/repos/shjeon-96/your-private-repo/languages \
+             > languages.json
+
+    - name: Update README with new stats
+      run: |
+        # 언어 통계 업데이트 로직을 추가
+        # 예: 새로운 언어 통계를 README.md에 삽입
+
+    - name: Commit and push changes
+      run: |
+        git add README.md
+        git commit -m "Update README with latest language stats"
+        git push
