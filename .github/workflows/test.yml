@@ -57,9 +57,10 @@ jobs:
       run: |
         # README.md에 그래프 반영
         sed -i '/<!-- LANGUAGE_GRAPH -->/!b;n;c\<img src="language_graph.png" alt="Language Usage Graph" />' README.md
+        sed -i '/<!-- LANGUAGE_GRAPH_PIE -->/!b;n;c\<img src="language_pie_chart.png" alt="Language Usage Graph" />' README.md
 
     - name: Commit changes
       run: |
-        git add README.md language_graph.png
+        git add README.md language_graph.png language_pie_chart.png
         git commit -m "Update README with latest language stats and GitHub activity graph"
         git push
