@@ -53,13 +53,18 @@ jobs:
     - name: Generate language usage graph
       run: python create_language_graph.py
 
-    - name: Update README with new graph
+    - name: Generate GitHub activity graph (3D Lego Style)
+      run: |
+        docker run --rm -v $(pwd):/app ghcr.io/jasonlong/isometric-contributions --user your_github_username --output github_activity.png
+
+    - name: Update README with new graphs
       run: |
         # README.md에 그래프 반영
         sed -i '/<!-- LANGUAGE_GRAPH -->/!b;n;c\<img src="language_graph.png" alt="Language Usage Graph" />' README.md
+        sed -i '/<!-- GITHUB_ACTIVITY_GRAPH -->/!b;n;c\<img src="github_activity.png" alt="GitHub Activity Graph" />' README.md
 
     - name: Commit changes
       run: |
-        git add README.md language_graph.png
-        git commit -m "Update README with latest language stats"
+        git add README.md language_graph.png github_activity.png
+        git commit -m "Update README with latest language stats and GitHub activity graph"
         git push
