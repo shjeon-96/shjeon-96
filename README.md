@@ -22,3 +22,6 @@ I'm a Full-Stack Developer who loves working with **React, Next.js, TypeScript, 
 ![Visitor Count](https://komarev.com/ghpvc/?username=shjeon-96&color=blue)  
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=shjeon-96&layout=compact&theme=dark&hide=css,html)
+
+## GitHub Stats
+![GitHub Stats](./stats.svg)
