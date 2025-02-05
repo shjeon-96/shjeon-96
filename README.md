@@ -35,10 +35,7 @@
 </p>
 
 <!-- LANGUAGES -->
-status: 404 lines
-documentation_url: https://docs.github.com/rest/repos/repos#list-repository-languages lines
-message: Not Found lines
-
+<img src="language_graph.png" alt="Language Usage Graph" />
 ---
 
 ### 📊 언어별 라인 수
@@ -56,67 +53,3 @@ message: Not Found lines
 ---
 
 ⭐ **"코드를 작성하고, 배우고, 만들고, 공유하자!"** 🚀
-
-
-JavaScript: 669462 lines
-CSS: 141225 lines
-HTML: 533 lines
-TypeScript: 160462 lines
-JavaScript: 946 lines
-TypeScript: 317117 lines
-CSS: 27032 lines
-JavaScript: 734 lines
-HTML: 330 lines
-HTML: 793356 lines
-TypeScript: 396653 lines
-CSS: 27286 lines
-JavaScript: 714 lines
-TypeScript: 382152 lines
-CSS: 1328 lines
-Dockerfile: 730 lines
-JavaScript: 520 lines
-TypeScript: 1313806 lines
-HTML: 793356 lines
-CSS: 27268 lines
-JavaScript: 714 lines
-Dart: 1269065 lines
-Ruby: 3784 lines
-Kotlin: 1113 lines
-Swift: 723 lines
-Objective-C: 38 lines
-Java: 2666287 lines
-PLpgSQL: 12409 lines
-HTML: 962 lines
-Lua: 257 lines
-
-JavaScript: 669462 lines
-CSS: 141225 lines
-HTML: 533 lines
-TypeScript: 160462 lines
-JavaScript: 946 lines
-TypeScript: 317117 lines
-CSS: 27032 lines
-JavaScript: 734 lines
-HTML: 330 lines
-HTML: 793356 lines
-TypeScript: 396653 lines
-CSS: 27286 lines
-JavaScript: 714 lines
-TypeScript: 382152 lines
-CSS: 1328 lines
-Dockerfile: 730 lines
-JavaScript: 520 lines
-TypeScript: 1313806 lines
-HTML: 793356 lines
-CSS: 27268 lines
-JavaScript: 714 lines
-Dart: 1269065 lines
-Ruby: 3784 lines
-Kotlin: 1113 lines
-Swift: 723 lines
-Objective-C: 38 lines
-Java: 2666287 lines
-PLpgSQL: 12409 lines
-HTML: 962 lines
-Lua: 257 lines
-
