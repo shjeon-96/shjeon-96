@@ -2,7 +2,7 @@ name: Update GitHub Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 매일 자정에 실행 (원하는 시간으로 변경 가능)
+    - cron: '0 0 * * *'  # 매일 자정에 실행
   push:
     branches:
       - main
@@ -26,10 +26,16 @@ jobs:
              https://api.github.com/repos/shjeon-96/your-private-repo/languages \
              > languages.json
 
+    - name: Install jq
+      run: sudo apt-get install jq
+
     - name: Update README with new stats
       run: |
-        # 언어 통계 업데이트 로직을 추가
-        # 예: 새로운 언어 통계를 README.md에 삽입
+        # 모든 언어 통계 가져오기
+        languages=$(jq -r 'to_entries | map("\(.key): \(.value) lines") | .[]' languages.json)
+
+        # 언어 통계를 README.md에 삽입
+        sed -i "/<!-- LANGUAGES -->/a $languages" README.md
 
     - name: Commit and push changes
       run: |
