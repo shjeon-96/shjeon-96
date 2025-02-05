@@ -60,6 +60,6 @@ jobs:
 
     - name: Commit changes
       run: |
-        git add README.md language_graph.png github_activity.png
+        git add README.md language_graph.png
         git commit -m "Update README with latest language stats and GitHub activity graph"
         git push
