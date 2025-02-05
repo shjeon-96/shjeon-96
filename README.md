@@ -5,20 +5,6 @@ Always striving to approach every task with a positive mindset. 😇✨
 
 ---
 
-#### ✏️ My Records
-<a href="https://ssddo-story.tistory.com/" target="_blank">
-  <img src="https://img.shields.io/badge/Tistory-%23000000.svg?style=for-the-badge&logo=tistory&logoColor=white" alt="Tistory" />
-</a>
-
-<br>
-
-#### 📫 Connect
-<a href="mailto:lee.seung.hyeon.010524@gmail.com">
-  <img src="https://img.shields.io/badge/Gmail-%23D14836.svg?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
-</a>
-
-<br>
-
 #### ⚙️ Technologies I'm Using  
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
   <div style="display: flex; gap: 10px;">
