@@ -43,7 +43,7 @@
 <!-- LANGUAGES -->
 <!-- GITHUB_ACTIVITY_GRAPH -->
 <!-- LANGUAGE_GRAPH_PIE -->
----
+<img src="language_pie_chart.png" alt="Language Usage Graph" />
 
 ### 📫 연락하기
 - 🌐 **포트폴리오:** [추후 업데이트 예정]
