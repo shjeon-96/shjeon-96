@@ -39,8 +39,9 @@ jobs:
           sed -i "/<!-- LANGUAGES -->/a $line" README.md
         done
 
-    - name: Commit and push changes
+    - name: Commit changes
       run: |
         git add README.md
+        git add languages.json  # languages.json 파일도 추가
         git commit -m "Update README with latest language stats"
         git push
