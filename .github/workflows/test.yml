@@ -15,46 +15,38 @@ jobs:
     - name: Checkout the repository
       uses: actions/checkout@v3
 
-    - name: Set up Git
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
       run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
+        python -m pip install --upgrade pip
+        pip install matplotlib jq
 
     - name: Fetch languages from private repo
       run: |
-        repos=("reviewon-front-react" "reviewon-server-nestjs" "bupay-front-react" "sosomarket-webview" "baum-distri-homepage" "sosomarket-front-react" "sosomarket-app" "sosomarket-api")
-        for repo in "${repos[@]}"; do
-          curl -H "Authorization: token ${{ secrets.YOUR_NEW_GITHUB_TOKEN }}" \
-               "https://api.github.com/repos/bubaum/$repo/languages" \
-               > "$repo-languages.json"
-        done
+        curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+             https://api.github.com/repos/your-org/your-private-repo/languages \
+             > languages.json
 
-    - name: Install jq
-      run: sudo apt-get install jq
-
-    - name: Update README with new stats
+    - name: Create language stats graph
       run: |
-        # 모든 언어 통계 가져오기
-        languages=""
-        repos=("reviewon-front-react" "reviewon-server-nestjs" "bupay-front-react" "sosomarket-webview" "baum-distri-homepage" "sosomarket-front-react" "sosomarket-app" "sosomarket-api")
-        for repo in "${repos[@]}"; do
-          repo_languages=$(jq -r 'to_entries | map("\(.key): \(.value) lines") | .[]' "$repo-languages.json")
-          languages+="$repo_languages"$'\n'
-        done
-        
-        # 디버깅을 위한 출력 확인
-        echo "$languages"  # 언어 통계를 출력해봅니다.
-        
-        # 언어 통계를 README.md에 삽입
-        echo "$languages" | while IFS= read -r line; do
-          printf "%s\n" "$line" >> README.md
-        done
-        
-        # 변경 사항 확인
-        cat README.md  # README.md의 변경 내용을 출력하여 확인합니다.
+        python create_language_graph.py
 
-    - name: Commit changes
+    - name: Upload language graph image
+      run: |
+        git add languages_graph.png
+        git commit -m "Update language stats graph"
+        git push
+
+    - name: Update README.md with new image
+      run: |
+        sed -i '/<!-- LANGUAGES -->/a ![Languages by Line Count](languages_graph.png)' README.md
+        
+    - name: Commit changes to README
       run: |
         git add README.md
-        git commit -m "Update README with latest language stats"
+        git commit -m "Update README with language stats graph"
         git push
