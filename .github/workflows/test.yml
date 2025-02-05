@@ -22,7 +22,7 @@ jobs:
 
     - name: Fetch languages from private repo
       run: |
-        curl -H "Authorization: token ${{ secrets.GH_STATS_TOKEN }}" \
+        curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/shjeon-96/your-private-repo/languages \
              > languages.json
 
