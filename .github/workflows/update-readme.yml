@@ -1,0 +1,43 @@
+name: GitHub-Profile-3D-Contrib
+
+on:
+  schedule:
+    - cron: "0 18 * * *"  # 매일 18:00 UTC 실행 (한국 기준 새벽 3시)
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: generate-github-profile-3d-contrib
+    permissions:
+      contents: write    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Fetch Contributions (Including Private Repos)
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python fetch_contributions.py
+
+      - name: Run GitHub Profile 3D Contrib
+        uses: yoshi389111/github-profile-3d-contrib@0.6.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}  # 비공개 레포 포함
+          USERNAME: shjeon-96
+
+      - name: Commit & Push
+        run: |
+          git config --global user.name "shjeon_96"
+          git config --global user.email "tmdgns893758@gmail.com"
+          git add -A .
+          git commit -m "generated"
+          git push
