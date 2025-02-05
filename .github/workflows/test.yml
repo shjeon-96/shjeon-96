@@ -22,7 +22,7 @@ jobs:
 
     - name: Fetch languages from private repos
       run: |
-        repos=("reviewon-front-react" "reviewon-server-nestjs" "bupay-front-react" "sosomarket-webview" "baum-distri-homepage" "sosomarket-front-react" "sosomarket-app" "sosomarket-api")
+        repos=("reviewon-front-react" "reviewon-server-nestjs" "bupay-front-react" "sosomarket-webview" "baum-distri-homepage" "sosomarket-front-react" "sosomarket-app")
         echo "{}" > languages.json  # 빈 JSON 파일 초기화
         
         for repo in "${repos[@]}"; do
