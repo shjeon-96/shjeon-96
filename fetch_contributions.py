@@ -3,9 +3,9 @@ import os
 import json
 
 GITHUB_API = "https://api.github.com"
-ORG_NAME = "your-org-name"  # 조직 이름
-USERNAME = "shjeon-96"  # GitHub 사용자명
 TOKEN = os.getenv("GH_PAT")
+USERNAME = os.getenv("GH_USERNAME")
+ORG_NAME = os.getenv("GH_ORG_NAME")
 
 headers = {"Authorization": f"token {TOKEN}"}
 
