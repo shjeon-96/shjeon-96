@@ -1,66 +1,25 @@
-name: Update GitHub Stats
-
+name: GitHub-Profile-3D-Contrib
 on:
   schedule:
-    - cron: '0 0 * * *'  # 매일 자정 실행
-  push:
-    branches:
-      - main
+    - cron: "0 18 * * *"  
+  workflow_dispatch:
 
 jobs:
-  update-stats:
+  build:
     runs-on: ubuntu-latest
-
+    name: generate-github-profile-3d-contrib
+    permissions:
+      contents: write    
     steps:
-    - name: Checkout the repository
-      uses: actions/checkout@v3
-
-    - name: Set up Git
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-
-    - name: Fetch languages from private repos
-      run: |
-        repos=("reviewon-front-react" "reviewon-server-nestjs" "bupay-front-react" "sosomarket-webview" "baum-distri-homepage" "sosomarket-front-react" "sosomarket-app")
-        echo "{}" > languages.json  # 빈 JSON 파일 초기화
-        
-        for repo in "${repos[@]}"; do
-          echo "Fetching languages for $repo..."
-          response=$(curl -H "Authorization: token ${{ secrets.YOUR_NEW_GITHUB_TOKEN }}" \
-                           "https://api.github.com/repos/bubaum/$repo/languages")
-          
-          if [[ $response == *"Not Found"* ]]; then
-            echo "⚠️ $repo: Repository not found, skipping..."
-            continue
-          fi
-
-          echo "$response" > "$repo-languages.json"
-
-          jq -s 'reduce .[] as $item ({}; 
-            reduce ($item | to_entries[]) as $lang (.; 
-              .[$lang.key] = (.[$lang.key] // 0) + $lang.value))' languages.json "$repo-languages.json" > temp.json && mv temp.json languages.json
-        done
-
-        echo "✅ Merged language data:"
-        cat languages.json  # 최종 통합된 JSON 출력
-
-    - name: Install Python dependencies
-      run: |
-        sudo apt-get install -y python3 python3-pip
-        pip install matplotlib
-
-    - name: Generate language usage graph
-      run: python create_language_graph.py
-
-    - name: Update README with new graphs
-      run: |
-        # README.md에 그래프 반영
-        sed -i '/<!-- LANGUAGE_GRAPH -->/!b;n;c\<img src="language_graph.png" alt="Language Usage Graph" />' README.md
-        sed -i '/<!-- LANGUAGE_GRAPH_PIE -->/!b;n;c\<img src="language_pie_chart.png" alt="Language Usage Graph" />' README.md
-
-    - name: Commit changes
-      run: |
-        git add README.md language_graph.png language_pie_chart.png
-        git commit -m "Update README with latest language stats and GitHub activity graph"
-        git push
+      - uses: actions/checkout@v2
+      - uses: yoshi389111/github-profile-3d-contrib@0.6.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.YOUR_NEW_GITHUB_TOKEN }} 
+          USERNAME: shjeon-96
+      - name: Commit & Push
+        run: |
+          git config user.name shjeon_96
+          git config user.email tmdgns893758@gmail.com
+          git add -A .
+          git commit -m "generated"
+          git push
