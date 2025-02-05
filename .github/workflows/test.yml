@@ -35,7 +35,9 @@ jobs:
         languages=$(jq -r 'to_entries | map("\(.key): \(.value) lines") | .[]' languages.json)
 
         # 언어 통계를 README.md에 삽입
-        sed -i "/<!-- LANGUAGES -->/a $languages" README.md
+        echo "$languages" | while IFS= read -r line; do
+          sed -i "/<!-- LANGUAGES -->/a $line" README.md
+        done
 
     - name: Commit and push changes
       run: |
