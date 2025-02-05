@@ -41,6 +41,7 @@
 ### 📊 언어별 라인 수
 
 <!-- LANGUAGES -->
+<!-- GITHUB_ACTIVITY_GRAPH -->
 
 ---
 
