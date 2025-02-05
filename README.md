@@ -1,27 +1,45 @@
-## Hi there! 👋  
-I'm a Full-Stack Developer who loves working with **React, Next.js, TypeScript, and Firebase**!  
+<h1 align="center">Hi there, I'm shjeon-96 👋</h1>
 
-### 🔧 Tech Stack  
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)  
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)  
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)  
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)  
+<p align="center">
+  💻 Full-Stack Developer | 🚀 Passionate about Web & Mobile Development
+</p>
 
-### 📈 GitHub Stats  
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=내_깃허브_ID&show_icons=true&theme=dark)  
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=내_깃허브_ID&layout=compact&theme=dark)  
+---
 
-### 🏆 Trophies  
-![Trophy](https://github-profile-trophy.vercel.app/?username=shjeon-96&theme=gruvbox)  
+### 🔥 About Me
+- 🌟 **Full-Stack Developer** with a focus on **Frontend (React, Next.js) & Mobile (Flutter, React Native)**
+- 🔧 **Tech Stack:** `Next.js 15` | `TypeScript` | `React` | `Flutter` | `Firebase`
+- 🛠️ **Backend Experience:** `Node.js` | `Express` | `Firebase Firestore`
+- 🎨 **UI/UX:** `Tailwind CSS` | `Shadcn/ui`
+- 🎯 **Interests:** Web Performance Optimization, Firebase, Mobile UI/UX
 
-### 📫 How to reach me  
-- **Email**: your.email@example.com  
-- **Blog**: [My Dev Blog](https://yourblog.com)  
-- **LinkedIn**: [Profile](https://linkedin.com/in/yourname)  
+---
 
-![Visitor Count](https://komarev.com/ghpvc/?username=shjeon-96&color=blue)  
+### 🚀 Tech Stack
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white" />
+</p>
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=shjeon-96&layout=compact&theme=dark&hide=css,html)
+---
 
-## GitHub Stats
-![GitHub Stats](./stats.svg)
+### 📊 GitHub Stats
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=shjeon-96&show_icons=true&theme=dark" />
+  <br/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shjeon-96&layout=compact&theme=dark&show_private=true" />
+</p>
+
+---
+
+### 📫 Connect with Me
+- 📧 **Email:** tmdgns8937@naver.com
+
+
+---
+
+⭐ **"Code, Learn, Build, and Share!"** 🚀
