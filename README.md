@@ -40,11 +40,5 @@
 
 ---
 
-### 포트폴리오
-
-https://shjeon.com/
-
----
-
 ### GitHub Activity  
 ![](./profile-3d-contrib/profile-gitblock.svg)
