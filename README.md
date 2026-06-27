@@ -8,7 +8,7 @@
 
 ### 🌐 Portfolio
 
-제품 프론트엔드 포트폴리오: [portfolio-web.vercel.app](https://portfolio-web.vercel.app)
+제품 프론트엔드 포트폴리오: [portfolio-web-beta-seven.vercel.app](https://portfolio-web-beta-seven.vercel.app)
 
 ---
 
